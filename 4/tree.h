@@ -121,13 +121,7 @@ private:
     TNodePtr Right = nullptr;
     TWeakPtr Parent = TWeakPtr(); 
     /*
-        Parent type: TNodePtr -> TWeakPtr
-        для прерывания цикла ссылок std::shared_ptr
-        Parent->Child и Child->Parent
-
-        Так как, если на данный цикл ничего не указывает,
-        то счетчик ссылок не может достичь нуля и происходит
-        утечка памяти
+        для прерывания цикла ссылок, нужно изменить тип Parent
     */
 
     TNode(T value)
